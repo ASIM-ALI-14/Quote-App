@@ -17,7 +17,11 @@ private val DarkColorScheme = darkColorScheme(
     secondary = PurpleGrey80,
     tertiary = Pink80,
     background = Color(0xFF333333),
-    onBackground = Color.White
+    onBackground = Color.White,
+    surface = Color(0xFF1E1E1E),
+    surfaceVariant = Color(0xFF3C3C3C)
+
+
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -25,7 +29,13 @@ private val LightColorScheme = lightColorScheme(
     secondary = PurpleGrey40,
     tertiary = Pink40,
     background = Color.White,
-    onBackground = Color.Black
+    onBackground = Color.Black,
+    surface = Color.White,
+    surfaceVariant = Color(0x6AA2A2A2)
+
+
+
+
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -42,7 +52,7 @@ private val LightColorScheme = lightColorScheme(
 fun QuotesAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {

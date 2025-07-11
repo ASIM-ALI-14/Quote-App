@@ -3,11 +3,15 @@ package com.example.quotesapp
 import android.content.Context
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import com.example.quotesapp.Models.Quote
 import com.example.quotesapp.Models.screen
 import com.google.gson.Gson
 
 object DataManager {
+   var theme = mutableStateOf(false)
     var currentpage = mutableStateOf(screen.ListScreen)
     var currentQuote: Quote? = null
     var data = emptyArray<Quote>()
@@ -36,4 +40,5 @@ object DataManager {
             currentpage.value=screen.ListScreen
         }
     }
+
 }

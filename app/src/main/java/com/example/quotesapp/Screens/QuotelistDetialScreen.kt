@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.unit.dp
 import com.example.quotesapp.R
@@ -43,8 +44,8 @@ fun QuoteListDetial(quote: Quote) {
             .background(
                 brush = Brush.sweepGradient(
                     colors = listOf(
-                        Color(0xFFffffff),
-                        Color(0xFFE3E3E3)
+                        MaterialTheme.colorScheme.surface,
+                        MaterialTheme.colorScheme.surfaceVariant
                     )
                 )
             ), contentAlignment = Alignment.Center
@@ -61,7 +62,10 @@ fun QuoteListDetial(quote: Quote) {
             ) {
                 Image(imageVector = Icons.Filled.FormatQuote,
                     contentDescription = "Quote",
+                    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground),
+
                     modifier = Modifier.size(62.dp).rotate(180F))
+
                 Text(text = "${quote.text}",
                     modifier = Modifier.padding(2.dp,2.dp,23.dp,19.dp),
                     style = MaterialTheme.typography.titleLarge
